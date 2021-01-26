@@ -574,12 +574,10 @@ boost_library(
 
 boost_library(
     name = "conversion",
-    hdrs = [
+    hdrs = glob("boost/lexical_cast/*.hpp") + [
         "boost/cast.hpp",
         "boost/implicit_cast.hpp",
         "boost/lexical_cast.hpp",
-        "boost/lexical_cast/bad_lexical_cast.hpp",
-        "boost/lexical_cast/try_lexical_convert.hpp",
         "boost/polymorphic_cast.hpp",
         "boost/polymorphic_pointer_cast.hpp",
     ],
