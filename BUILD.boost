@@ -574,7 +574,7 @@ boost_library(
 
 boost_library(
     name = "conversion",
-    hdrs = glob("boost/lexical_cast/*.hpp") + [
+    hdrs = glob(["boost/lexical_cast/**/*.hpp"]) + [
         "boost/cast.hpp",
         "boost/implicit_cast.hpp",
         "boost/lexical_cast.hpp",
@@ -582,12 +582,16 @@ boost_library(
         "boost/polymorphic_pointer_cast.hpp",
     ],
     deps = [
+        ":math",
+        ":container",
+        ":numeric_conversion",
         ":assert",
         ":config",
         ":fusion",
         ":throw_exception",
     ],
 )
+
 
 boost_library(
     name = "core",
